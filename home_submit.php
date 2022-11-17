@@ -40,8 +40,12 @@
       $end_day = $_POST['end_day'];
       $end_date = $end_year."/".$end_month."/".$end_day;
 
-      //個人ファイルに記入
-      $filename = "data/".$ID_email.".txt";
+      if($group == "personal" ){ //個人ファイルに記入
+        $filename = "data_user/".$ID_email.".txt";
+      }
+      else{ //グループファイルに記入
+        $filename = "data_group/".$group.".txt";
+      }
       $fp = fopen($filename, 'a'); // fopenでファイルを開く
       fwrite($fp,$date.",".$start_date.",".$end_date.",".$start.",".$goal.",".$rkyori.",".$fee.",".$times.",".$memo.",".$group."\n"); // fwriteで文字列を書き込む
       fclose($fp); // ファイルを閉じる

@@ -79,8 +79,7 @@
   }
   function make_table(){
     _d = new Date().getTime(); //キャッシュ回避のため日時を利用する
-    //alert(document.getElementById("group_selector1").innerHTML);
-    //alert(document.getElementByName("group").innerHTML);
+    //alert(document.getElementsByName('group').value);
     $.get("function_list/for_make_table.php?"
       + "server=" + server
       + "&ID_email=" + encodeURI(document.getElementById("ID_email").value)

@@ -57,37 +57,13 @@
   </script>
 
   <script type="text/javascript">
-  function make_group_selector(name, position){
-    _d = new Date().getTime(); //キャッシュ回避のため日時を利用する
-    $.get("function_list/search_group.php?"
-      + "server=" + server
-      + "&role=member"
-      + "&ID_email=" + encodeURI(document.getElementById("ID_email").value)
-      + "&cash=" + _d, function(data){
-      //alert(data);
-      var a = data.split(","); //改行で区切る
-      var group_selector = "<select name=\""+ name + "\">";
-      group_selector += "<option value=\"personal\">personal";
-      for(i = 0; i < a.length; i++){
-        if(a[i] != ""){
-          group_selector += "<option value=\"" + a[i] + "\">" + a[i];
-        }
-      }
-      group_selector += "</select>";
-      document.getElementById(position).innerHTML = group_selector;
-    });
-  }
   function make_table(){
     _d = new Date().getTime(); //キャッシュ回避のため日時を利用する
-    //alert(document.getElementById("group_selector1").innerHTML);
-    //alert(document.getElementByName("group").innerHTML);
     $.get("function_list/for_make_table.php?"
       + "server=" + server
       + "&ID_email=" + encodeURI(document.getElementById("ID_email").value)
-      //+ "&group=" +  encodeURI(document.getElementById("group1").value)
-      + "&group=personal"
+      + "&group=" +  encodeURI(document.getElementById("group1").value)
       + "&cash=" + _d, function(data){
-      //alert(data);
       var a = data.split("\n"); //改行で区切る
       var table = "<table>";
       table += "<tr>";
@@ -141,6 +117,32 @@
     echo($ID_email."でログイン済み<br>");
     echo("<input type=\"hidden\" id=\"ID_email\" value=\"".$ID_email."\">");
   }
+
+  function make_group_selector($ID_email){
+    require_once "function_list/search_group.php";
+    $_member_group = (search_group($ID_email, 0)); //search_group.phpで所属グループを抽出　search_group($ID_email, 0)　0 = memberのグループ, 1 = adminのグループ
+    $member_group = explode(",", $_member_group);
+    //print_r($member_group);
+
+    echo("<select name=\"group\">");
+    foreach($member_group as $key => $val){
+      echo("<option value=\"".$val."\">".$val);
+    }
+    echo("</select>");
+  }
+
+  function make_group_selector1($ID_email){
+    require_once "function_list/search_group.php";
+    $_member_group = (search_group($ID_email, 0)); //search_group.phpで所属グループを抽出　search_group($ID_email, 0)　0 = memberのグループ, 1 = adminのグループ
+    $member_group = explode(",", $_member_group);
+    //print_r($member_group);
+
+    echo("<select id=\"group1\">");
+    foreach($member_group as $key => $val){
+      echo("<option value=\"".$val."\">".$val);
+    }
+    echo("</select>");
+  }
   ?>
   <form name="form1">
     出発地点&nbsp;:
@@ -178,7 +180,11 @@
     回数&emsp;&emsp;：
     <input type="text" name="times" value="1"><br>
 
-    グループ：<div id="group_selector" style="display: inline-block; _display: inline;"></div><br>
+    グループ：
+    <?php
+    make_group_selector($ID_email);
+    ?>
+    <br>
     メモ&emsp;&emsp;：<br>
     <textarea name="memo" rows=3 cols=40 placeholder="メモ"></textarea><br>
     <input type="reset" value="クリア" vaign="center">&nbsp;&nbsp;
@@ -312,21 +318,66 @@
   </script>
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-  <div id="group_selector1" style="display: inline-block; _display: inline;"></div>
+  <?php make_group_selector1($ID_email); ?>
   <input type="button" value="決定" onclick="make_table()">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
   <input type="button" value="グループを作成する" onclick="location.href='make_group.php'">&emsp;
   <input type="button" value="グループに参加する" onclick="location.href='join_group.php'">&emsp;
   <input type="button" value="作成したグループの管理（未実装）" onclick=""><br>
   (料金は小数点以下切り捨て)<br>
-
   <form action="delete.php" method="POST">
-    <div id="table"></div>
+    <div id="table">
+      <script type="text/javascript">make_table();</script>
+    </div>
   </form>
 
-  <script type="text/javascript">
-    make_group_selector("group","group_selector");
-    make_group_selector("group1","group_selector1");
-    make_table();
-  </script>
+  <br>
+  <table>
+    <tr>
+      <th class="">登録日</th>
+      <th class="">期間</th>
+      <th class="">出発地点</th>
+      <th class="">目的地点</th>
+      <th class="">距離(m)</th>
+      <th class="">円/m</th>
+      <th class="">回数</th>
+      <th class="">料金</th>
+      <th class="">メモ</th>
+      <th class="">グループ</th>
+      <th class="">削除</th>
+    </tr>
+    <?php
+    $file_name = "data_user/".$ID_email.".txt"; //./dataの中の開くファイルの名前
+    echo($file_name);
+    $f = file_get_contents($file_name);
+    //echo($f);
+    $line = explode("\n", $f);
+    for($i = 0; $i < count($line); $i++){
+      list(
+        $user_data0[$i],$user_data1[$i],$user_data2[$i],$user_data3[$i],$user_data4[$i],$user_data5[$i],
+        $user_data6[$i],$user_data7[$i],$user_data8[$i],$user_data9[$i]) = explode(",",$line[$i],10);
+        //echo($user_data0[$i]);
+      }
+      for($i = 0; $i < count($line) - 1; $i++){
+        if($user_data9[$i] != ""){
+          echo "<tr>";
+          echo "<td>".$user_data0[$i]."</td>";
+          echo "<td>".$user_data1[$i]."～".$user_data2[$i]."</td>";
+          echo "<td>".$user_data3[$i]."</td>";
+          echo "<td>".$user_data4[$i]."</td>";
+          echo "<td>".$user_data5[$i]."</td>";
+          echo "<td>".$user_data6[$i]."</td>";
+          echo "<td>".$user_data7[$i]."</td>";
+          $money = $user_data5[$i] * $user_data6[$i] * $user_data7[$i];
+          echo "<td>".$money."</td>";
+          echo "<td>".$user_data8[$i]."</td>";
+          echo "<td>".$user_data9[$i]."</td>";
+          echo "<td>"."</td>";
+          echo "</tr>";
+        }
+      }
+      ?>
+    </table>
+
+
 </body>
 </html>

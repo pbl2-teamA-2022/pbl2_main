@@ -2,3 +2,5 @@
 group,pass,mailaddress,A/B/C/
 group1,aaa,mailaddress1,A/たろう
 group3,pass,mailaddress,
+test1000,test,mailaddress,
+group10,aaa,mailaddress1,A/たろう/mailaddress
