@@ -14,7 +14,8 @@
   session_start();
   $ID = $_SESSION['ID'];
   if($ID == null){
-    echo ("ログインし直してください<br>");
+    echo ("ログインし直してください");
+    echo ("<input type=\"button\" value=\"ログイン\" onClick=\"location.href='login.php'\"><br>");
   }
   else{
     list($ID_email,$ID_password) = explode(",",$ID,2);
@@ -50,7 +51,8 @@
       fwrite($fp,$date.",".$start_date.",".$end_date.",".$start.",".$goal.",".$rkyori.",".$fee.",".$times.",".$memo.",".$ID_email."\n"); // fwriteで文字列を書き込む
       fclose($fp); // ファイルを閉じる
 
-      echo("記録が完了しました。<br>");
+      echo("記録が完了しました。");
+      echo ("<input type=\"button\" value=\"homeに戻る\" onClick=\"location.href='home.php'\">");
     }
 
     else{
@@ -82,16 +84,16 @@
       echo("グループ：".$group."<br>");
       echo("メモ&emsp;：".$memo."<br>");
 
-      echo '<form action="home_submit.php" method="POST">'."\n";
+      echo ("<form action=\"home_submit.php\" method=\"POST\">");
       foreach($_POST as $key => $val){
         $_val = htmlspecialchars($val);
         //echo "$key = $_val<br>\n";
-        echo "<input type=\"hidden\" name=\"$key\" value=\"$_val\">\n";
+        echo ("<input type=\"hidden\" name=\"".$key."\" value=\"".$_val."\">");
       }
-      echo '<br><input type="submit" name="send" value="確認"></form>'."\n";
+      echo ("<br><input type=\"submit\" name=\"send\" value=\"確認\"></form>");
+      echo ("<input type=\"button\" value=\"homeに戻る\" onClick=\"location.href='home.php'\">");
     }
   }
   ?>
-  <input type="button" value="homeに戻る" onClick="location.href='home.php'">
 </body>
 </html>
