@@ -47,7 +47,7 @@
         $filename = "data_group/".$group.".txt";
       }
       $fp = fopen($filename, 'a'); // fopenでファイルを開く
-      fwrite($fp,$date.",".$start_date.",".$end_date.",".$start.",".$goal.",".$rkyori.",".$fee.",".$times.",".$memo.",".$group."\n"); // fwriteで文字列を書き込む
+      fwrite($fp,$date.",".$start_date.",".$end_date.",".$start.",".$goal.",".$rkyori.",".$fee.",".$times.",".$memo.",".$ID_email."\n"); // fwriteで文字列を書き込む
       fclose($fp); // ファイルを閉じる
 
       echo("記録が完了しました。<br>");

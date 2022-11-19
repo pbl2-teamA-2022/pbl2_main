@@ -66,7 +66,7 @@
       + "&cash=" + _d, function(data){
       //alert(data);
       var a = data.split(","); //改行で区切る
-      var group_selector = "<select name=\""+ name + "\">";
+      var group_selector = "<select name=\""+ name + "\" id=\""+ name + "\">";
       group_selector += "<option value=\"personal\">personal";
       for(i = 0; i < a.length; i++){
         if(a[i] != ""){
@@ -79,13 +79,17 @@
   }
   function make_table(){
     _d = new Date().getTime(); //キャッシュ回避のため日時を利用する
-    //alert(document.getElementById("group_selector1").innerHTML);
-    //alert(document.getElementByName("group").innerHTML);
+    var a;
+    if(!document.getElementById("group1")){
+      a = "personal";
+    }
+    else{
+      a = encodeURI(document.getElementById("group1").value);
+    }
     $.get("function_list/for_make_table.php?"
       + "server=" + server
       + "&ID_email=" + encodeURI(document.getElementById("ID_email").value)
-      //+ "&group=" +  encodeURI(document.getElementById("group1").value)
-      + "&group=personal"
+      + "&group=" + a
       + "&cash=" + _d, function(data){
       //alert(data);
       var a = data.split("\n"); //改行で区切る
@@ -100,7 +104,7 @@
       table +=  "<th>回数</th>";
       table +=  "<th>料金</th>";
       table +=  "<th>メモ</th>";
-      table +=  "<th>グループ</th>";
+      table +=  "<th>名前</th>";
       table +=  "<th>削除</th>";
       table +=  "</tr>";
       for(i = 0; i < a.length-1; i++){
@@ -312,16 +316,19 @@
   </script>
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-  <div id="group_selector1" style="display: inline-block; _display: inline;"></div>
-  <input type="button" value="決定" onclick="make_table()">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+  一覧<br>
+  グループ：<div id="group_selector1" style="display: inline-block; _display: inline;"></div>&emsp;
+  <input type="button" value="決定" onclick="make_table()">&emsp;
+  (料金は小数点以下切り捨て)&emsp;&emsp;&emsp;
   <input type="button" value="グループを作成する" onclick="location.href='make_group.php'">&emsp;
   <input type="button" value="グループに参加する" onclick="location.href='join_group.php'">&emsp;
   <input type="button" value="作成したグループの管理（未実装）" onclick=""><br>
-  (料金は小数点以下切り捨て)<br>
+  <br>
 
   <form action="delete.php" method="POST">
     <div id="table"></div>
   </form>
+  <br><br><br>
 
   <script type="text/javascript">
     make_group_selector("group","group_selector");

@@ -2,9 +2,9 @@
 $server = $_GET['server'];
 $ID_email = $_GET['ID_email'];
 $group = $_GET['group'];
-echo($ID_email."/".$group.",");
+//echo($ID_email."/".$group.",");
 if($ID_email == null){
-  echo ("ログインし直してください<br>");
+  //echo ("ログインし直してください<br>");
 }
 else{
   if($group == "personal" ){
