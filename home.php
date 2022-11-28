@@ -11,19 +11,14 @@
   <style>
   table{
     width: 80%;
-    padding: 3px;
     border-collapse: collapse;
-    border: solid 2px skyblue;/*表全体を線で囲う*/
     text-align: center;
   }
   table th {/*table内のtdに対して*/
     padding: 3px 10px;/*上下3pxで左右10px*/
-    border: solid 2px skyblue;/*実線 1px 黒*/
-    background: #EBFDFF;/*背景色*/
   }
   table td {/*table内のtdに対して*/
     padding: 3px 10px;/*上下3pxで左右10px*/
-    border: dashed 1px skyblue;/*点線 1px 黒*/
   }
   </style>
   <script type="text/javascript">
