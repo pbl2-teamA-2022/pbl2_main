@@ -8,7 +8,7 @@
   function check(){
     //処理
     var group_name = document.form1.group_name.value;
-    var group_password = document.form1.group_password.value;;
+    var group_password = document.form1.group_password.value;
     //alert(group_name);
     if(group_name == ""){
       alert("グループ名を入力してください");
@@ -26,7 +26,7 @@
 </head>
 <body>
   <h4>交通費計算システム</h4><br>
-  <form name="form1" method="POST" action="join_group1.php" onsubmit="return check()" >
+  <form name="form1" method="POST" action="join_group1.php" onsubmit="return check()">
     <font class="">グループ名</font><br>
     <input type="text" name="group_name" value="" placeholder="グループ名">
     <br>
