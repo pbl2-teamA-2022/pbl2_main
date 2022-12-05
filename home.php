@@ -94,24 +94,32 @@
         document.getElementById("table").innerHTML = table;
       });
     }
-    
+
     function check(){
-      /*
-      var group_name = document.form1.group_name.value;
-      var group_password = document.form1.group_password.value;;
-      //alert(group_name);
-      if(group_name == ""){
-        alert("グループ名を入力してください");
+      var check_start = document.form2.start.value;
+      var check_goal = document.form2.goal.value;
+      var check_rkyori = document.form2.rkyori.value;
+      var check_money = document.form2.money.value;
+      var check_times = document.form2.times.value;
+      if(check_start == "" || check_goal == ""){
+        alert("ルートを検索してください。");
         return false;
       }
-      else if(group_password == ""){
-        alert("パスワードを入力してください");
+      else if(check_rkyori == ""){
+        alert("距離が計算されていません。正しいルートが計算されていない可能性があります。");
+        return false;
+      }
+      else if(check_money == ""){
+        alert("料金が計算されていません。正しいルートが計算されていない可能性があります。");
+        return false;
+      }
+      else if(check_times == ""){
+        alert("回数を入力してください。");
         return false;
       }
       else{
         return true;
       }
-      */
     }
   </script>
 </head>
