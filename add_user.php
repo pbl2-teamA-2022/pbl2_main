@@ -36,6 +36,9 @@
       <br>
       <br>
       <form action="login_submit.php" method="POST">
+        <font class="" style="padding-right: 70px;">ユーザー名</font><br>
+        <input type="text" name="username" value="" placeholder="ユーザー名" require>
+        <br>
         <font class="" style="padding-right: 70px;">メールアドレス</font><br>
         <input type="text" name="email" value="" placeholder="メールアドレス" require>
         <br>

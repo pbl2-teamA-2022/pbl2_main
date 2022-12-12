@@ -1,5 +1,27 @@
 <?php 
     //php操作
+    /*
+    メールアドレスが正しい形か確認(@が入力されているか)
+    ↓
+    メールアドレスがすでに登録されていないか確認
+    ↓
+    登録
+    */
+
+    function console_log( $data ){
+        echo '<script>';
+        echo 'console.log('. json_encode( $data ) .')';
+        echo '</script>';
+    }
+
+    function wrongAddress(){
+        echo "メールアドレスが正しい形で入力されていません。<br>";
+    }
+
+    function sameAddress(){
+        echo "そのメールアドレスは既に登録されています。"
+    }
+
 ?>
 
 <!DOCTYPE html>
