@@ -1,7 +1,11 @@
+<?php 
+    //php操作
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <title>ログイン|交通費計算システム</title>
+  <title>登録完了|交通費計算システム</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   <style>
   body {
@@ -29,24 +33,15 @@
     <div style="padding: 50px; height: 400px; width: 300px; border: 1px solid #00b4d8;">
       <h1 align="center">
         <font color="#0096c7">
-          ログイン画面
+          新規登録完了
         </font>
       </h1>
       <br>
       <br>
       <br>
-      <form action="login_submit.php" method="POST">
-        <font class="" style="padding-right: 70px;">メールアドレス</font><br>
-        <input type="text" name="email" value="" placeholder="メールアドレス" require>
-        <br>
-        <font class="" style="padding-right: 100px;">パスワード</font><br>
-        <input type="password" name="password" value="" placeholder="パスワード" require>
-        <br>
-        <br>
-        <br>
-        <input type="submit" name="submit" value="ログイン">
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="button" value="新規登録" onClick="location.href='add_user.php'">
+      <h3>新規アカウントの登録が完了しました。</h3>
+      <h4>ログイン画面でログインしてください。</h4>
+        <input type="button" value="ログイン画面へ" onClick="location.href='login.php'">
       </form>
     </div>
   </div>
