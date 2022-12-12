@@ -36,10 +36,10 @@
       <br>
       <form action="login_submit.php" method="POST">
         <font class="" style="padding-right: 70px;">メールアドレス</font><br>
-        <input type="text" name="email" value="" placeholder="メールアドレス">
+        <input type="text" name="email" value="" placeholder="メールアドレス" require>
         <br>
         <font class="" style="padding-right: 100px;">パスワード</font><br>
-        <input type="password" name="password" value="" placeholder="パスワード">
+        <input type="password" name="password" value="" placeholder="パスワード" require>
         <br>
         <br>
         <br>
