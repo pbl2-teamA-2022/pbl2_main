@@ -4,7 +4,11 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
   <title>交通費計算システム</title>
-  <script>
+  <script type="text/javascript" src="zepto.min.js"></script>
+  <script type="text/javascript" src="function_list/make_route.js"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzK1MNll10T76kaYCf3eFxhzmvbQ6Hf0c&libraries=geometry&language=ja"></script>
+  <script type="text/javascript">
+    var file_name = "home_submit.php";
   </script>
 </head>
 <body>
@@ -87,19 +91,26 @@
       echo ("<form action=\"home_submit.php\" method=\"POST\">");
       foreach($_POST as $key => $val){
         $_val = htmlspecialchars($val);
-        //echo "$key = $_val<br>\n";
         echo ("<input type=\"hidden\" name=\"".$key."\" value=\"".$_val."\">");
       }
       echo ("<br><input type=\"submit\" name=\"send\" value=\"確認\"></form>");
       echo ("<input type=\"button\" value=\"homeに戻る\" onClick=\"location.href='home.php'\"><br>");
     }
+    //ルート情報
+    echo ("<form name=\"form1\">");
+    echo ("<input type=\"hidden\" name=\"start\" value=\"".$start."\">");
+    echo ("<input type=\"hidden\" name=\"goal\" value=\"".$goal."\">");
+    echo ("</form>");
   }
   ?>
+  
+  <!-- 地図の表示 -->
   <div id="map_canvas" style="float:left; left:0%; height:600px; width:60%; border:solid 1px;"></div>
   <script type="text/javascript">
     var map;
     //map = new google.maps.Map(document.getElementById("map_canvas"), {zoom:zoom, center:{lat:cen_lat, lng:cen_lng}, mapTypeId:google.maps.MapTypeId.ROADMAP});
     map = new google.maps.Map(document.getElementById("map_canvas"), {zoom:zoom, center:{lat:cen_lat, lng:cen_lng}, mapTypeId:google.maps.MapTypeId.TERRAIN});
+    makeroute(); //遷移したときに実行
   </script>
 </body>
 </html>
