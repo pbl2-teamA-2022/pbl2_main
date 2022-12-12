@@ -11,7 +11,7 @@ session_destroy();
 <html  lang="ja">
 <head>
   <meta charset="UTF-8"/>
-  <title>ログアウト</title>
+  <title>ログアウト|交通費計算システム</title>
 
   <style>
   body {

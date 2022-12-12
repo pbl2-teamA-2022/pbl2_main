@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+  <title>ログイン|交通費計算システム</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   <style>
   body {
