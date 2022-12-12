@@ -7,8 +7,7 @@
   <link rel="stylesheet" href="home.css">
   <script type="text/javascript" src="zepto.min.js"></script>
   <script type="text/javascript" src="function_list/make_route.js"></script>
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzK1MNll10T76kaYCf3eFxhzmvbQ6Hf0c&libraries=geometry&language=ja">
-  </script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzK1MNll10T76kaYCf3eFxhzmvbQ6Hf0c&libraries=geometry&language=ja"></script>
   <style>
   table{
     width: 80%;
