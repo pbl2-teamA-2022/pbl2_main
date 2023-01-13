@@ -1,0 +1,26 @@
+header {
+    display: flex;
+    width: 100%;
+    height: 75px;
+    background-color: #33FFFF;
+    align-items: center;
+}
+
+.title {
+    display: inline;
+}
+
+.head {
+    float: right;
+}
+
+body {
+    background-image: url(images/mizuirohaikeiy3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.contener {
+    width: 100%;
+}
