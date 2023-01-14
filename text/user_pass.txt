@@ -1,2 +1,0 @@
-mailaddress,password,user_name
-mailaddress1,password1,user_name1

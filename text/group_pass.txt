@@ -1,6 +1,0 @@
-グループ名,パスワード,作成者,参加者１/参加者２/参加者３
-group,pass,mailaddress,A/B/C/
-group1,aaa,mailaddress1,A/たろう
-group3,pass,mailaddress,
-test1000,test,mailaddress,
-group10,aaa,mailaddress1,A/たろう/mailaddress
