@@ -51,7 +51,7 @@
         //echo($_email."でログイン済み<br>");
 
         if ($_POST['send'] == '確認') {
-          $date = date("Y/m/d H:i:s"); //現在時間の取得
+          $date = date("Y/m/d-H:i:s"); //現在時間の取得
           $start = $_POST['start'];
           $goal = $_POST['goal'];
           $rkyori = $_POST['rkyori'];

@@ -1,16 +1,16 @@
 function make_table() {
   _d = new Date().getTime(); //キャッシュ回避のため日時を利用する
-  var a;
+  var group;
   if (!document.getElementById("group1")) {
-    a = "personal";
+    group = "personal";
   }
   else {
-    a = encodeURI(document.getElementById("group1").value);
+    group = encodeURI(document.getElementById("group1").value);
   }
   $.get("function_list/make_table_for_home_submit.php?"
     + "server=" + server
     + "&ID_email=" + encodeURI(document.getElementById("ID_email").value)
-    + "&group=" + a
+    + "&group=" + group
     + "&cash=" + _d, function (data) {
       //alert(data);
       var a = data.split("\n"); //改行で区切る
@@ -50,9 +50,10 @@ function make_table() {
               + "<input type=\"hidden\" name=\"goal\" value=" + b[4] + ">"
               + "<input type=\"hidden\" name=\"rkyori\" value=" + b[5] + ">"
               + "<input type=\"hidden\" name=\"fee\" value=" + b[6] + ">"
-              + "<input type=\"hidden\" name=\"time\" value=" + b[7] + ">"
+              + "<input type=\"hidden\" name=\"times\" value=" + b[7] + ">"
               + "<input type=\"hidden\" name=\"memo\" value=" + b[8] + ">"
               + "<input type=\"hidden\" name=\"name\" value=" + b[9] + ">"
+              + "<input type=\"hidden\" name=\"group\" value=" + group + ">"
               + "<input type=\"submit\" value=\"削除\"></form>"
               + "</td>";
         table += "</tr>";
