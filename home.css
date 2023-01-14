@@ -38,7 +38,7 @@ body {
 }
 
 .right {
-    float: right;
+    float: left;
     height: 60%;
     width: 50%;
     margin: 2%;
