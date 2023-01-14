@@ -13,7 +13,7 @@
   <script type="text/javascript" src="function_list/make_table_for_home.js"></script>
   <script type="text/javascript"
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzK1MNll10T76kaYCf3eFxhzmvbQ6Hf0c&libraries=geometry&language=ja">
-    </script>
+  </script>
   <script type="text/javascript">
     var page_name = "home";
     function check() {
@@ -149,7 +149,7 @@
 
       <input type="button" value="グループを作成する" onclick="location.href='make_group.php'">&emsp;
       <input type="button" value="グループに参加する" onclick="location.href='join_group.php'">&emsp;
-      <input type="button" value="作成したグループの管理（未実装）" onclick=""><br><br>
+      <input type="button" value="作成したグループの管理" onclick="location.href='admin_group.php'"><br><br>
 
       <form action="delete.php" method="POST">
         <div id="table"></div>
