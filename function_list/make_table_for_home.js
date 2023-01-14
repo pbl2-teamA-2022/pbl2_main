@@ -7,7 +7,7 @@ function make_table() {
   else {
     a = encodeURI(document.getElementById("group1").value);
   }
-  $.get("function_list/make_table_submit_for_home.php?"
+  $.get("function_list/make_table_for_home_submit.php?"
     + "server=" + server
     + "&ID_email=" + encodeURI(document.getElementById("ID_email").value)
     + "&group=" + a
@@ -41,7 +41,20 @@ function make_table() {
         table += "<td>" + Math.trunc(b[5] * b[6] * b[7]) + "</td>";
         table += "<td>" + b[8] + "</td>";
         table += "<td>" + b[9] + "</td>";
-        table += "<td>" + "" + "</td>";
+        table += "<td>"
+              + "<form name=\"delete\" method=\"POST\" action=\"home_delete.php\">"
+              + "<input type=\"hidden\" name=\"date\" value=" + b[0] + ">"
+              + "<input type=\"hidden\" name=\"start_date\" value=" + b[1] + ">"
+              + "<input type=\"hidden\" name=\"end_date\" value=" + b[2] + ">"
+              + "<input type=\"hidden\" name=\"start\" value=" + b[3] + ">"
+              + "<input type=\"hidden\" name=\"goal\" value=" + b[4] + ">"
+              + "<input type=\"hidden\" name=\"rkyori\" value=" + b[5] + ">"
+              + "<input type=\"hidden\" name=\"fee\" value=" + b[6] + ">"
+              + "<input type=\"hidden\" name=\"time\" value=" + b[7] + ">"
+              + "<input type=\"hidden\" name=\"memo\" value=" + b[8] + ">"
+              + "<input type=\"hidden\" name=\"name\" value=" + b[9] + ">"
+              + "<input type=\"submit\" value=\"削除\"></form>"
+              + "</td>";
         table += "</tr>";
       }
       table += "</table>";
