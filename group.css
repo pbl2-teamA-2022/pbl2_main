@@ -31,16 +31,17 @@ body {
 .left {
     float: left;
     width: 39%;
-    margin: 25px;
-    padding: 25px;
+    margin: 10px;
+    padding: 15px;
     padding-left: 25px;
+    padding-top: 50px;
 }
 
 .right {
     float: right;
     height: 60%;
     width: 50%;
-    margin: 25px;
+    margin: 2%;
 }
 
 .foot {

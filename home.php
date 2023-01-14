@@ -14,27 +14,8 @@
   <script type="text/javascript"
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzK1MNll10T76kaYCf3eFxhzmvbQ6Hf0c&libraries=geometry&language=ja">
     </script>
-  <style>
-    table {
-      width: 80%;
-      border-collapse: collapse;
-      text-align: center;
-    }
-
-    table th {
-      /*table内のtdに対して*/
-      padding: 3px 10px;
-      /*上下3pxで左右10px*/
-    }
-
-    table td {
-      /*table内のtdに対して*/
-      padding: 3px 10px;
-      /*上下3pxで左右10px*/
-    }
-  </style>
   <script type="text/javascript">
-  var page_name = "home";
+    var page_name = "home";
     function check() {
       var check_start = document.form2.start.value;
       var check_goal = document.form2.goal.value;
@@ -115,24 +96,24 @@
 
         開始日&emsp;：
         <select name="start_year">
-        <script type="text/javascript">for (i = 2022; i <= 2023; i++) { document.write("<OPTION>" + i) }</script>
+          <script type="text/javascript">for (i = 2022; i <= 2023; i++) { document.write("<OPTION>" + i) }</script>
         </select>年
         <select name="start_month">
-        <script type="text/javascript">for (i = 1; i <= 12; i++) { document.write("<OPTION>" + i) }</script>
+          <script type="text/javascript">for (i = 1; i <= 12; i++) { document.write("<OPTION>" + i) }</script>
         </select>月
         <select name="start_day">
-        <script type="text/javascript">for (i = 1; i <= 31; i++) { document.write("<OPTION>" + i) }</script>
+          <script type="text/javascript">for (i = 1; i <= 31; i++) { document.write("<OPTION>" + i) }</script>
         </select>日<br>
 
         終了日&emsp;：
         <select name="end_year">
-        <script type="text/javascript">for (i = 2022; i <= 2023; i++) { document.write("<OPTION>" + i) }</script>
+          <script type="text/javascript">for (i = 2022; i <= 2023; i++) { document.write("<OPTION>" + i) }</script>
         </select>年
         <select name="end_month">
-        <script type="text/javascript">for (i = 1; i <= 12; i++) { document.write("<OPTION>" + i) }</script>
+          <script type="text/javascript">for (i = 1; i <= 12; i++) { document.write("<OPTION>" + i) }</script>
         </select>月
         <select name="end_day">
-        <script type="text/javascript">for (i = 1; i <= 31; i++) { document.write("<OPTION>" + i) }</script>
+          <script type="text/javascript">for (i = 1; i <= 31; i++) { document.write("<OPTION>" + i) }</script>
         </select>日<br>
 
         回数&emsp;&emsp;：
@@ -151,11 +132,11 @@
     <br>
     <div class="right">
       <!-- 地図の表示 -->
-      <div id="map_canvas" style="float:left; left:5%; height:500px; width:90%; border:solid 1px;"></div>
+      <div id="map_canvas" style="float:left; left:5%; height:500px; width:100%; border:solid 1px;"></div>
       <script type="text/javascript">
-      var map;
-      //map = new google.maps.Map(document.getElementById("map_canvas"), {zoom:zoom, center:{lat:cen_lat, lng:cen_lng}, mapTypeId:google.maps.MapTypeId.ROADMAP});
-      map = new google.maps.Map(document.getElementById("map_canvas"), { zoom: zoom, center: { lat: cen_lat, lng: cen_lng }, mapTypeId: google.maps.MapTypeId.TERRAIN });
+        var map;
+        //map = new google.maps.Map(document.getElementById("map_canvas"), {zoom:zoom, center:{lat:cen_lat, lng:cen_lng}, mapTypeId:google.maps.MapTypeId.ROADMAP});
+        map = new google.maps.Map(document.getElementById("map_canvas"), { zoom: zoom, center: { lat: cen_lat, lng: cen_lng }, mapTypeId: google.maps.MapTypeId.TERRAIN });
       </script>
     </div>
 
@@ -178,9 +159,9 @@
   </div>
 
   <script type="text/javascript">
-  make_group_selector("group", "group_selector");
-  make_group_selector("group1", "group_selector1");
-  make_table();
+    make_group_selector("group", "group_selector");
+    make_group_selector("group1", "group_selector1");
+    make_table();
   </script>
 </body>
 

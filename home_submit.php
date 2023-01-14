@@ -125,10 +125,11 @@
           echo ("<input type=\"hidden\" name=\"start\" value=\"" . $start . "\">");
           echo ("<input type=\"hidden\" name=\"goal\" value=\"" . $goal . "\">");
           echo ("</form>");
+          echo ("</div>");
 
           //地図の表示
           echo ("<div class=\"right\">");
-          echo ("<div id=\"map_canvas\" style=\"float:left; left:5%; height:500px; width:90%; border:solid 1px;\"></div>");
+          echo ("<div id=\"map_canvas\" style=\"float:left; left:5%; height:500px; width:100%; border:solid 1px;\"></div>");
           echo ("</div>");
           echo ("<script type=\"text/javascript\">");
           echo ("var map;");
