@@ -26,24 +26,5 @@ body {
 
 .contener {
     width: 100%;
-}
-
-.left {
-    float: left;
-    width: 39%;
-    margin: 10px;
-    padding: 15px;
-    padding-left: 25px;
-    padding-top: 50px;
-}
-
-.right {
-    float: right;
-    height: 60%;
-    width: 50%;
-    margin: 2%;
-}
-
-.foot {
-    clear: both;
+    padding: 3%;
 }
