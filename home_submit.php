@@ -11,7 +11,7 @@
   <script type="text/javascript"
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzK1MNll10T76kaYCf3eFxhzmvbQ6Hf0c&libraries=geometry&language=ja"></script>
   <script type="text/javascript">
-    var file_name = "home_submit.php";
+    var page_name = "home_submit.php";
   </script>
 </head>
 
@@ -26,14 +26,12 @@
       $ID = $_SESSION['ID'];
       if ($ID == null) {
         echo ("<b>ログインしてください</b>&emsp;");
-        echo ("<input type=\"button\" value=\"ログイン\" onClick=\"location.href='logi\
-n.php'\"><br>");
+        echo ("<input type=\"button\" value=\"ログイン\" onClick=\"location.href='login.php'\"><br>");
       } else {
         list($ID_email, $ID_password) = explode(",", $ID, 2);
         echo ("<input type=\"hidden\" id=\"ID_email\" value=\"" . $ID_email . "\">");
         echo ("<b>" . $ID_email . "</b>でログイン済み&emsp;");
-        echo ("<input type=\"button\" value=\"ログアウト\" onClick=\"location.href='lo\
-gout.php'\"><br>");
+        echo ("<input type=\"button\" value=\"ログアウト\" onClick=\"location.href='logout.php'\"><br>");
       }
       ?>
     </div>
@@ -47,10 +45,11 @@ gout.php'\"><br>");
       if ($ID == null) {
         //  echo ("ログインし直してください");
         //  echo ("<input type=\"button\" value=\"ログイン\" onClick=\"location.href='login.php'\"><br>");
-      } else {
+      }
+      else {
         list($ID_email, $ID_password) = explode(",", $ID, 2);
         //echo($_email."でログイン済み<br>");
-      
+
         if ($_POST['send'] == '確認') {
           $date = date("Y/m/d H:i:s"); //現在時間の取得
           $start = $_POST['start'];
@@ -79,10 +78,12 @@ gout.php'\"><br>");
           $fp = fopen($filename, 'a'); // fopenでファイルを開く
           fwrite($fp, $date . "," . $start_date . "," . $end_date . "," . $start . "," . $goal . "," . $rkyori . "," . $fee . "," . $times . "," . $memo . "," . $ID_email . "\n"); // fwriteで文字列を書き込む
           fclose($fp); // ファイルを閉じる
-      
+
           echo ("記録が完了しました。");
           echo ("<input type=\"button\" value=\"homeに戻る\" onClick=\"location.href='home.php'\"><br>");
-        } else {
+        }
+
+        else {
           $start = $_POST['start'];
           $goal = $_POST['goal'];
           $rkyori = $_POST['rkyori'];
@@ -118,26 +119,27 @@ gout.php'\"><br>");
           }
           echo ("<br><input type=\"submit\" name=\"send\" value=\"確認\"></form><br>");
           echo ("<input type=\"button\" value=\"homeに戻る\" onClick=\"location.href='home.php'\"><br>");
+
+          //ルート情報
+          echo ("<form name=\"form1\">");
+          echo ("<input type=\"hidden\" name=\"start\" value=\"" . $start . "\">");
+          echo ("<input type=\"hidden\" name=\"goal\" value=\"" . $goal . "\">");
+          echo ("</form>");
+
+          //地図の表示
+          echo ("<div class=\"right\">");
+          echo ("<div id=\"map_canvas\" style=\"float:left; left:5%; height:500px; width:90%; border:solid 1px;\"></div>");
+          echo ("</div>");
+          echo ("<script type=\"text/javascript\">");
+          echo ("var map;");
+          echo ("map = new google.maps.Map(document.getElementById(\"map_canvas\"), { zoom: zoom, center: { lat: cen_lat, lng: cen_lng }, mapTypeId: google.maps.MapTypeId.TERRAIN });");
+          echo ("makeroute();");
+          echo ("</script>");
         }
-        //ルート情報
-        echo ("<form name=\"form1\">");
-        echo ("<input type=\"hidden\" name=\"start\" value=\"" . $start . "\">");
-        echo ("<input type=\"hidden\" name=\"goal\" value=\"" . $goal . "\">");
-        echo ("</form>");
       }
       ?>
     </div>
-    <br>
-    <div class="right">
-      <!-- 地図の表示 -->
-      <div id="map_canvas" style="float:left; left:5%; height:500px; width:90%; border:solid 1px;"></div>
-      <script type="text/javascript">
-        var map;
-        //map = new google.maps.Map(document.getElementById("map_canvas"), {zoom:zoom, center:{lat:cen_lat, lng:cen_lng}, mapTypeId:google.maps.MapTypeId.ROADMAP});
-        map = new google.maps.Map(document.getElementById("map_canvas"), { zoom: zoom, center: { lat: cen_lat, lng: cen_lng }, mapTypeId: google.maps.MapTypeId.TERRAIN });
-        makeroute(); //遷移したときに実行
-      </script>
-    </div>
+  </div>
+  <br>
 </body>
-
 </html>

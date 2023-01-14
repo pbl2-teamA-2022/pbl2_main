@@ -25,7 +25,7 @@ var rkyori = null; //走行距離
 var fee = 0.01; //1mあたりのガソリン代
 var money = null;
 
-function makeroute(){ //入力された出発地を緯度経度に変換
+function makeroute(file_name){ //入力された出発地を緯度経度に変換
   start = document.form1.start.value;
   if(start  == ""){ //出発地が入力されていない
     alert("出発地が入力されていません。");
@@ -115,7 +115,7 @@ function makeroute2(){ //ルートを作成
       rkyori = Math.round(_rkyori);
       money = rkyori * fee;
 
-      if( file_name == "home.php" ){
+      if( page_name == "home" ){
         document.getElementById('start').innerHTML = start;
         document.getElementById('goal').innerHTML = goal;
         document.getElementById('start_latlng').innerHTML = start_latlng;
