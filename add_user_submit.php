@@ -12,6 +12,19 @@
     $email = $_POST['email'];
     $password = $_POST['password'];
     $passcheck = $_POST['passcheck'];
+    function passCheck(){
+      echo '<h1 align="center">
+      <font color="#0096c7">
+        エラー
+      </font>
+    </h1>
+    <br>
+    <br>
+    <br>
+    <h3>パスワードが一致していません。</h3>
+<input type="button" value="戻る" onClick="history.back()">';
+      exit;
+    }
     function console_log( $data ){
             echo '<script>';
             echo 'console.log('. json_encode( $data ) .')';
@@ -19,7 +32,17 @@
         }
 
     function wrongAddress(){
-      echo "<h1>メールアドレスが正しい形で入力されていません。</h1><br>";
+      echo '<h1 align="center">
+      <font color="#0096c7">
+        エラー
+      </font>
+    </h1>
+    <br>
+    <br>
+    <br>
+    <h3>メールアドレスが正しい形で入力されていません。</h3>
+<input type="button" value="戻る" onClick="history.back()">';
+      exit;
     }
     function sameAddress(){
       echo '<h1 align="center">
@@ -32,23 +55,13 @@
             <br>
             <h3>入力されたメールアドレスは既に登録されています。</h3>
       <input type="button" value="戻る" onClick="history.back()">';
+      exit;
     }
-    function complete(){
-      echo'<h1 align="center">
-      <font color="#0096c7">
-        新規登録完了
-      </font>
-    </h1>-->
-    <br>
-    <br>
-    <br>
-    <!--<h3>新規アカウントの登録が完了しました。</h3>
-    <h4>ログイン画面でログインしてください。</h4>--
-    <input type="button" value="ログイン画面へ" onClick="history.back()">';
-    }    
-    
+    if($password != $passcheck){
+      passCheck();
+    }
     if(!strpos($email, '@')){
-      wrongAdress();
+      wrongAddress();
       exit;
     }
     $fp = fopen("text/user_pass.txt", "r");
@@ -62,15 +75,14 @@
         sameAddress();
         exit;
       }
-      fclose($fp);
+      
     }
-    $_add = $email.','.$password.','$username."\n";
+    fclose($fp);
+    $_add = $email.','.$password.','.$username.",0\n";
 
     $fp = fopen("text/user_pass.txt", "a");
     fwrite($fp, $_add);
     fclose($fp);
-
-    complete();
     
 
 ?>
@@ -104,18 +116,18 @@
     <font class="font1">交通費計算システム</font><br>
     <br>
     <div style="padding: 50px; height: 400px; width: 300px; border: 1px solid #00b4d8;">
-      <!--<h1 align="center">
+      <h1 align="center">
         <font color="#0096c7">
           新規登録完了
         </font>
-      </h1>-->
+      </h1>
       <br>
       <br>
       <br>
-      <!--<h3>新規アカウントの登録が完了しました。</h3>
-      <h4>ログイン画面でログインしてください。</h4>--
+      <h3>新規アカウントの登録が完了しました。</h3>
+      <h4>ログイン画面でログインしてください。</h4>
         <input type="button" value="ログイン画面へ" onClick="location.href='login.php'">
-      </form>-->
+      </form>
     </div>
   </div>
 </body>
