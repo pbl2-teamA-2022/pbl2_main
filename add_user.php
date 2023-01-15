@@ -35,7 +35,7 @@
       <br>
       <br>
       <br>
-      <form action="login_submit.php" method="POST">
+      <form action="add_user_submit.php" method="POST">
         <font class="" style="padding-right: 70px;">ユーザー名</font><br>
         <input type="text" name="username" value="" placeholder="ユーザー名" require>
         <br>
