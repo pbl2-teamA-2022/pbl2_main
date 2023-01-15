@@ -27,4 +27,17 @@ body {
 .contener {
     width: 100%;
     padding: 3%;
+    font-size: 120%;
+}
+
+input,
+select {
+    height: 23px;
+    margin: 2px;
+    border-radius: 5px;
+}
+
+textarea {
+    margin: 2px;
+    border-radius: 5px;
 }

@@ -13,7 +13,7 @@
   <script type="text/javascript" src="function_list/make_table_for_home.js"></script>
   <script type="text/javascript"
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzK1MNll10T76kaYCf3eFxhzmvbQ6Hf0c&libraries=geometry&language=ja">
-  </script>
+    </script>
   <script type="text/javascript">
     var page_name = "home";
     function check() {
@@ -159,7 +159,10 @@
     make_group_selector("group", "group_selector");
     make_group_selector("group1", "group_selector1");
     make_table();
-  </script>
+  </script><br>
+  <div style="text-align: right;">
+    <a href="#">ページトップに戻る</a>
+  </div>
 </body>
 
 </html>

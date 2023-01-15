@@ -35,6 +35,7 @@ body {
     padding: 15px;
     padding-left: 25px;
     padding-top: 50px;
+    font-size: 120%;
 }
 
 .right {
@@ -110,4 +111,27 @@ tr:nth-child(odd) {
 tr:nth-child(even) {
     background-color: white;
     /* 背景色指定 */
+}
+
+/*--hover 前--*/
+a {
+    color: #639bb7;
+}
+
+/*--hover 後--*/
+a:hover {
+    color: orange;
+    /*-- 文字色をオレンジ色 --*/
+}
+
+input,
+select {
+    height: 23px;
+    margin: 2px;
+    border-radius: 5px;
+}
+
+textarea {
+    margin: 2px;
+    border-radius: 5px;
 }
