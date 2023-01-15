@@ -44,7 +44,7 @@
     <br>
     <!--<h3>新規アカウントの登録が完了しました。</h3>
     <h4>ログイン画面でログインしてください。</h4>--
-    <input type="button" value="ログイン画面へ" onClick="location.href='login.php'">';
+    <input type="button" value="ログイン画面へ" onClick="history.back()">';
     }    
     
     if(!strpos($email, '@')){
