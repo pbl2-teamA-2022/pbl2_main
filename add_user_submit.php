@@ -22,7 +22,7 @@
     <br>
     <br>
     <h3>パスワードが一致していません。</h3>
-<input type="button" value="戻る" onClick="history.back()">';
+    <input type="button" value="戻る" onClick="history.back()">';
       exit;
     }
     function console_log( $data ){
