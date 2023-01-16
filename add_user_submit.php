@@ -32,29 +32,57 @@
         }
 
     function wrongAddress(){
-      echo '<h1 align="center">
-      <font color="#0096c7">
-        エラー
-      </font>
-    </h1>
-    <br>
-    <br>
-    <br>
-    <h3>メールアドレスが正しい形で入力されていません。</h3>
-<input type="button" value="戻る" onClick="history.back()">';
+      echo '<body>
+      <div align="center">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <font class="font1">交通費計算システム</font><br>
+        <br>
+        <div style="padding: 50px; height: 400px; width: 300px; border: 1px solid #00b4d8;">
+        <h1 align="center">
+        <font color="#0096c7">
+          エラー
+        </font>
+      </h1>
+      <br>
+      <br>
+      <br>
+      <h3>メールアドレスが正しい形で入力されていません。</h3>
+      <input type="button" value="戻る" onClick="history.back()">
+          </form>
+        </div>
+      </div>
+    </body>';
       exit;
     }
     function sameAddress(){
-      echo '<h1 align="center">
-              <font color="#0096c7">
-                エラー
-              </font>
-            </h1>
-            <br>
-            <br>
-            <br>
-            <h3>入力されたメールアドレスは既に登録されています。</h3>
-      <input type="button" value="戻る" onClick="history.back()">';
+      echo '<body>
+      <div align="center">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <font class="font1">交通費計算システム</font><br>
+        <br>
+        <div style="padding: 50px; height: 400px; width: 300px; border: 1px solid #00b4d8;">
+        <h1 align="center">
+        <font color="#0096c7">
+          エラー
+        </font>
+      </h1>
+      <br>
+      <br>
+      <br>
+      <h3>入力されたアドレスは既に登録されています。</h3>
+      <input type="button" value="戻る" onClick="history.back()">
+          </form>
+        </div>
+      </div>
+    </body>';
       exit;
     }
     if($password != $passcheck){
