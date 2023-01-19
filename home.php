@@ -149,7 +149,7 @@
 
       <input type="button" value="グループを作成する" onclick="location.href='make_group.php'">&emsp;
       <input type="button" value="グループに参加する" onclick="location.href='join_group.php'">&emsp;
-      <input type="button" value="作成したグループの管理" onclick="location.href='admin_group.php'"><br><br>
+      <input type="button" value="作成したグループの管理(未実装)" onclick="location.href='admin_group.php'"><br><br>
       <div id="table"></div>
       <br><br>
     </div>
