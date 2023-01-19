@@ -43,6 +43,7 @@ function make_table() {
         table += "<td>" + b[9] + "</td>";
         table += "<td>"
               + "<form name=\"delete\" method=\"POST\" action=\"home_delete.php\">"
+              + "<input type=\"hidden\" name=\"server\" value=" + server + ">"
               + "<input type=\"hidden\" name=\"date\" value=" + b[0] + ">"
               + "<input type=\"hidden\" name=\"start_date\" value=" + b[1] + ">"
               + "<input type=\"hidden\" name=\"end_date\" value=" + b[2] + ">"

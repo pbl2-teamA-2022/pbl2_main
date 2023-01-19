@@ -1,6 +1,6 @@
 function make_group_selector(name, position) {
   _d = new Date().getTime(); //キャッシュ回避のため日時を利用する
-  $.get("function_list/search_group.php?"
+  $.get("function_list/search_join_group.php?"
     + "server=" + server
     + "&role=member"
     + "&ID_email=" + encodeURI(document.getElementById("ID_email").value)
