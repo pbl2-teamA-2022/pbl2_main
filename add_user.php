@@ -48,9 +48,6 @@
             新規登録
           </font>
         </h1>
-        <br>
-        <br>
-        <br>
         <form name="form" method="POST" action="add_user_submit.php" onsubmit="return check()">
           <font class="" style="padding-right: 100px;">ユーザー名</font><br>
           <input type="text" name="user_name" value="" placeholder="ユーザー名" require>

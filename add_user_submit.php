@@ -20,8 +20,6 @@
           </font>
         </h1>
         <br>
-        <br>
-        <br>
         <?php
         function check_email($email){
           //読み込みモードでファイルを開く

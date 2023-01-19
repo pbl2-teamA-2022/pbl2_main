@@ -21,7 +21,6 @@
         </h1>
         <br>
         <br>
-        <br>
         <form action="login_submit.php" method="POST">
           <font class="" style="padding-right: 70px;">メールアドレス</font><br>
           <input type="text" name="email" value="" placeholder="メールアドレス" require>

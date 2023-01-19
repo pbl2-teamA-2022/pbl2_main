@@ -21,7 +21,6 @@
         </h1>
         <br>
         <br>
-        <br>
         <?php
         function LoginError(){
           echo ("<h3>メールアドレスもしくは<br>パスワードが違います</h3>");
