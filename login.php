@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
   <title>ログイン|交通費計算システム</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -10,7 +9,8 @@
 <body>
   <header>
     <h4 class="title">交通費計算システム&emsp;&emsp;</h4>
-  </header><br>
+  </header>
+  <br>
   <div class="contener">
     <div align="center">
       <div style="padding: 50px; height: 400px; width: 300px; border: 1px solid #00b4d8;">
@@ -39,5 +39,4 @@
     </div>
   </div>
 </body>
-
 </html>
