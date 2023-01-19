@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
@@ -35,18 +34,16 @@
       }
       ?>
     </div>
-  </header><br><br>
+  </header>
+  <br>
+  <br>
   <div class="contener">
     <div class="left">
       <?php
       error_reporting(E_ALL ^ E_NOTICE);
       session_start();
       $ID = $_SESSION['ID'];
-      if ($ID == null) {
-        //  echo ("ログインし直してください");
-        //  echo ("<input type=\"button\" value=\"ログイン\" onClick=\"location.href='login.php'\"><br>");
-      }
-      else {
+      if ($ID != null) {
         list($ID_email, $ID_password) = explode(",", $ID, 2);
         //echo($_email."でログイン済み<br>");
 
