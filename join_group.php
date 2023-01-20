@@ -33,6 +33,13 @@
   </header>
   <br>
   <div class="contener">
+  <div align="center">
+      <div style="padding: 50px; height: 400px; width: 300px; border: 1px solid #00b4d8;">
+        <h1 align="center">
+          <font color="#0096c7">
+            グループ参加
+          </font>
+        </h1>
     <form name="form1" method="POST" action="join_group1.php" onsubmit="return check()">
       <font class="">グループ名</font><br>
       <input type="text" name="group_name" value="" placeholder="グループ名">
@@ -42,9 +49,12 @@
       <br>
       <br>
       <br>
+      <br>
       <input type="submit" name="submit" value="グループに参加">
       &nbsp;&nbsp;&nbsp;&nbsp;
       <input type="button" value="homeに戻る" onClick="location.href='home.php'">
     </form>
+  </div>
+  </div>
   </div>
 </body>
