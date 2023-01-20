@@ -25,7 +25,7 @@
       $ID = $_SESSION['ID'];
       if ($ID == null) {
         echo ("<b>ログインしてください</b>&emsp;");
-        echo ("<input type=\"button\" value=\"ログイン\" onClick=\"location.href='login.php'\"><br>");
+        echo ("<input type=\"button\" value=\"ログイン\" onClick=\"location.href='index.php'\"><br>");
       } else {
         list($ID_email, $ID_password) = explode(",", $ID, 2);
         echo ("<input type=\"hidden\" id=\"ID_email\" value=\"" . $ID_email . "\">");

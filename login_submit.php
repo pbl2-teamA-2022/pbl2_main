@@ -25,7 +25,7 @@
         function LoginError(){
           echo ("<h3>メールアドレスもしくは<br>パスワードが違います</h3>");
           echo ("<br><br>");
-          echo ("<input type=\"button\" value=\"ログイン画面へ\" onClick=\"location.href='login.php'\">");
+          echo ("<input type=\"button\" value=\"ログイン画面へ\" onClick=\"location.href='index.php'\">");
         }
 
         LoginCheck();

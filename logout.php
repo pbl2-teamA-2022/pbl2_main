@@ -35,7 +35,7 @@
         <br>
         <br>
         <br>
-        <input type="button" onclick="location.href='./login.php'" value="ログイン画面へ">
+        <input type="button" onclick="location.href='./index.php'" value="ログイン画面へ">
       </div>
     </div>
   </div>

@@ -62,7 +62,7 @@
           <input type="password" name="passcheck" value="" placeholder="パスワード(確認)" require>
           <br>
           <br>
-          <input type="button" onclick="location.href='./login.php'" value="戻る">
+          <input type="button" onclick="location.href='./index.php'" value="戻る">
           &nbsp;&nbsp;&nbsp;&nbsp;
           <input type="submit" name="submit" value="登録">
         </form>

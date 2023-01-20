@@ -34,7 +34,7 @@
               echo ("<br><br><br>");
               echo ("<input type=\"button\" value=\"新規登録画面へ\" onClick=\"location.href='add_user.php'\">");
               echo ("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
-              echo ("<input type=\"button\" value=\"ログイン画面へ\" onClick=\"location.href='login.php'\">");
+              echo ("<input type=\"button\" value=\"ログイン画面へ\" onClick=\"location.href='index.php'\">");
               fclose($fp);
               return false;
             }
@@ -63,7 +63,7 @@
             echo ("<h3>新規アカウントの登録が<br>完了しました。</h3>");
             echo ("<h3>ログイン画面でログイン<br>してください。</h3>");
             echo ("<br>");
-            echo ("<input type=\"button\" value=\"ログイン画面へ\" onClick=\"location.href='login.php'\">");
+            echo ("<input type=\"button\" value=\"ログイン画面へ\" onClick=\"location.href='index.php'\">");
           }
         }
         ?>
