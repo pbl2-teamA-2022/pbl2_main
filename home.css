@@ -129,7 +129,13 @@ select {
     height: 23px;
     margin: 2px;
     border-radius: 5px;
-    cursor:pointer;
+}
+
+select,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+    cursor: pointer;
 }
 
 textarea {
