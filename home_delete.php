@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
   <title>交通費計算システム</title>
+  <link rel="stylesheet" href="group.css">
   <script type="text/javascript" src="zepto.min.js"></script>
 </head>
 <body>
@@ -29,6 +30,9 @@
       ?>
     </div>
   </header>
+  <br>
+  <br>
+  <div class="contener">
 
 
   <?php
@@ -155,5 +159,6 @@
   ?>
   <br>
   <br>
+  </div>
 </body>
 </html>
