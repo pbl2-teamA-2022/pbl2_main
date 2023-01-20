@@ -39,9 +39,6 @@
       <font class="">パスワード</font><br>
       <input type="password" name="group_password" value="" placeholder="パスワード">
       <br>
-      <font class="">招待を送信するメールアドレス(未実装)</font><br>
-      <textarea name="inbite_emails" rows=4 cols=80></textarea><br>
-      <br>
       <br>
       <input type="submit" name="submit" value="グループ作成">
       &nbsp;&nbsp;&nbsp;&nbsp;

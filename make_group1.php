@@ -18,28 +18,17 @@
     <?php
     session_start();
     $ID = $_SESSION['ID'];
-    if ($ID == null) {
-      echo ("ログインし直してください<br>");
-    } else {
+    if ($ID != null) {
       list($ID_email, $ID_password) = explode(",", $ID, 2);
-      //echo($_email."でログイン済み<br>");
-    
+
       $group_name = $_POST['group_name'];
       $group_password = $_POST['group_password'];
-      //追記点
-      $inbite_emails = explode(",", $_POST['inbite_emails']);
       echo ("グループ名：" . $group_name . "<br>");
       echo ("パスワード：" . $group_password . "<br>");
-      //追記点
-      foreach ($inbite_emails as $value) {
-        echo $value;
-        echo "\n";
-      }
 
       //同じグループ名がすでに存在するかの確認
       $file_name = "text/group_pass.txt";
       $f = file_get_contents($file_name);
-      //echo($f);
       $line = explode("\n", $f);
 
       $check = 0;
@@ -54,14 +43,15 @@
 
       if ($check == 1) {
         echo ("すでにそのグループは存在しています。グループ名を変更してください。<br>");
-      } else if ($check == 0) {
+      }
+      else if ($check == 0) {
         //group_pass.txtにグループを追加
         $filename = 'text/group_pass.txt';
         $fp = fopen($filename, 'a'); // fopenでファイルを開く
         fwrite($fp, $group_name . ',' . $group_password . ',' . $ID_email . ',' . "\n"); // fwriteで文字列を書き込む
         fclose($fp); // ファイルを閉じる
         //readfile($filename); // ファイルを出力する
-    
+
         echo ("グループが作成されました。<br>");
       }
     }
