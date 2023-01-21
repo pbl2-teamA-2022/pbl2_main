@@ -22,10 +22,8 @@
         <br>
         <?php
         function check_email($email){
-          //読み込みモードでファイルを開く
-          $fp = fopen("text/user_pass.txt", "r");
-          //ファイルを１行ずつ取得する
-          while($line = fgets($fp)){
+          $fp = fopen("text/user_pass.txt", "r"); //読み込みモードでファイルを開く
+          while($line = fgets($fp)){ //ファイルを１行ずつ取得する
             $trim = rtrim($line);
             list($_email,$_password,$_user_name) = explode(",",$trim,3);
             //echo($_email.$_password.$_user_name);
@@ -48,23 +46,15 @@
         $passcheck = $_POST['passcheck'];
         $user_name = $_POST['user_name'];
 
-
-        if(!strpos($email, '@')){
-          echo ("<h3>メールアドレスが正しい形で<br>入力されていません。</h3>");
-          echo ("<br><br><br>");
-          echo ("<input type=\"button\" value=\"新規登録画面へ\" onClick=\"location.href='add_user.php'\">");
-        }
-        else{
-          if(check_email($email)){
-            $add = $email.','.$password.','.$user_name."\n";
-            $fp = fopen("text/user_pass.txt", "a");
-            fwrite($fp, $add);
-            fclose($fp);
-            echo ("<h3>新規アカウントの登録が<br>完了しました。</h3>");
-            echo ("<h3>ログイン画面でログイン<br>してください。</h3>");
-            echo ("<br>");
-            echo ("<input type=\"button\" value=\"ログイン画面へ\" onClick=\"location.href='index.php'\">");
-          }
+        if(check_email($email)){
+          $add = $email.','.$password.','.$user_name."\n";
+          $fp = fopen("text/user_pass.txt", "a");
+          fwrite($fp, $add);
+          fclose($fp);
+          echo ("<h3>新規アカウントの登録が<br>完了しました。</h3>");
+          echo ("<h3>ログイン画面でログイン<br>してください。</h3>");
+          echo ("<br>");
+          echo ("<input type=\"button\" value=\"ログイン画面へ\" onClick=\"location.href='index.php'\">");
         }
         ?>
       </div>

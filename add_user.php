@@ -4,7 +4,6 @@
   <title>新規登録|交通費計算システム</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   <link rel="stylesheet" href="group.css">
-
   <script type="text/javascript">
   function check() {
     var user_name = document.form.user_name.value;
@@ -50,22 +49,28 @@
         </h1>
         <form name="form" method="POST" action="add_user_submit.php" onsubmit="return check()">
           <font class="" style="padding-right: 100px;">ユーザー名</font><br>
-          <input type="text" name="user_name" value="" placeholder="ユーザー名" require>
+          <input type="text" pattern="[^ 　,/\]+" maxlength="64" name="user_name" placeholder="ユーザー名" required>
           <br>
           <font class="" style="padding-right: 70px;">メールアドレス</font><br>
-          <input type="text" name="email" value="" placeholder="メールアドレス" require>
+          <input type="email" maxlength="64" name="email" placeholder="メールアドレス" required>
           <br>
           <font class="" style="padding-right: 100px;">パスワード</font><br>
-          <input type="password" name="password" value="" placeholder="パスワード" require>
+          <input type="password" pattern="[^ 　,/\]+" maxlength="64" name="password" placeholder="パスワード" required>
           <br>
           <font class="" style="padding-right: 50px;">パスワード(確認)</font><br>
-          <input type="password" name="passcheck" value="" placeholder="パスワード(確認)" require>
+          <input type="password" pattern="[^ 　,/\]+" maxlength="64" name="passcheck" placeholder="パスワード(確認)" required>
           <br>
           <br>
           <input type="button" onclick="location.href='./index.php'" value="戻る">
           &nbsp;&nbsp;&nbsp;&nbsp;
           <input type="submit" name="submit" value="登録">
         </form>
+      </div>
+      <br>
+      <div class="box_login">
+        <b>条件</b><br>
+        ユーザー名／パスワード：「 」「　」「,」「/」「\」禁止。最大64文字。<br>
+        メールアドレス&emsp;&emsp;&emsp;&emsp;：スペース禁止。最大64文字。<br>
       </div>
     </div>
   </div>

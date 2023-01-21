@@ -4,8 +4,25 @@
   <title>ログイン|交通費計算システム</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <link rel="stylesheet" href="group.css">
-</head>
+  <script type="text/javascript">
+  function check() {
+    var email = document.form.email.value;
+    var password = document.form.password.value;
 
+    if (email == "") {
+      alert("メールアドレスを入力してください");
+      return false;
+    }
+    else if (password == "") {
+      alert("パスワードを入力してください");
+      return false;
+    }
+    else {
+      return true;
+    }
+  }
+  </script>
+</head>
 <body>
   <header>
     <h4 class="title">交通費計算システム&emsp;&emsp;</h4>
@@ -21,7 +38,7 @@
         </h1>
         <br>
         <br>
-        <form action="login_submit.php" method="POST">
+        <form name="form" method="POST" action="login_submit.php" onsubmit="return check()">
           <font class="" style="padding-right: 70px;">メールアドレス</font><br>
           <input type="text" name="email" value="" placeholder="メールアドレス" require>
           <br>
