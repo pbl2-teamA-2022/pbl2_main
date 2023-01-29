@@ -1,0 +1,68 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 75px;
+    background-color: #33FFFF;
+    align-items: center;
+}
+
+.title {
+    display: inline;
+    padding: 25px;
+}
+
+.head {
+    display: flex;
+    padding: 25px;
+}
+
+pre {
+    white-space: pre-wrap ;
+    font-family: "Meiryo"; 
+    font-size: 16px;
+}
+
+body {
+    background-image: url(images/mizuirohaikeiy3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.contener {
+    width: 100%;
+    font-size: 120%;
+}
+
+input,
+select {
+    height: 23px;
+    margin: 2px;
+    border-radius: 5px;
+}
+
+select,
+input[type="button"], 
+input[type="submit"],
+input[type="reset"]{
+    cursor: pointer;
+}
+
+textarea {
+    margin: 2px;
+    border-radius: 5px;
+}
+
+.box_login {
+    width: 800px;
+    padding: 0.5em 1em;
+    //margin: 2em 0;
+    text-align: left;
+    //font-weight: bold;
+    font-size:16px;
+    //color: #6091d3;/*ï∂éöêF*/
+    //background: #FFF;
+    border: solid 3px #6091d3;/*ê¸*/
+    border-radius: 10px;/*äpÇÃä€Ç›*/
+}
