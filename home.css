@@ -119,6 +119,16 @@ tr:nth-child(even) {
     /* 背景色指定 */
 }
 
+.table_str {
+    width: 10%;
+}
+.table_nmb {
+    width: 5%;
+}
+.table_memo {
+    width: 25%;
+}
+
 /*--hover 前--*/
 a {
     color: blue;

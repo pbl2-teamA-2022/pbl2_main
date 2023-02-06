@@ -16,17 +16,17 @@ function make_table() {
       var a = data.split("\n"); //改行で区切る
       var table = "<table>";
       table += "<tr>";
-      table += "<th>登録日</th>";
-      table += "<th>期間</th>";
-      table += "<th>出発地点</th>";
-      table += "<th>目的地点</th>";
-      table += "<th>距離(m)</th>";
-      table += "<th>円/m</th>";
-      table += "<th>回数</th>";
-      table += "<th>料金</th>";
-      table += "<th>メモ</th>";
-      table += "<th>名前</th>";
-      table += "<th>削除</th>";
+      table += "<th class=\"table_str\">登録日</th>";
+      table += "<th class=\"table_str\">期間</th>";
+      table += "<th class=\"table_str\">出発地点</th>";
+      table += "<th class=\"table_str\">目的地点</th>";
+      table += "<th class=\"table_nmb\">距離(m)</th>";
+      table += "<th class=\"table_nmb\">円/m</th>";
+      table += "<th class=\"table_nmb\">回数</th>";
+      table += "<th class=\"table_nmb\">料金</th>";
+      table += "<th class=\"table_memo\">メモ</th>";
+      table += "<th class=\"table_str\">名前</th>";
+      table += "<th class=\"table_nmb\">削除</th>";
       table += "</tr>";
       for (i = 0; i < a.length - 1; i++) {
         var b = a[i].split(","); //カンマで区切る

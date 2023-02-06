@@ -32,6 +32,7 @@ function makeroute(file_name){ //入力された出発地を緯度経度に変�
   }
   else if( document.form1.start.value.match(/^[0-9\., ]+$/) ){ //出発地に緯度・経度が入力されている
     var p = document.form1.start.value.split(",");
+    start = p[0] + "-" + p[1];
     start_latlng = new google.maps.LatLng(p[0], p[1]);
     //alert(start_latlng);
     makeroute1();
@@ -56,6 +57,7 @@ function makeroute1(){ //入力された目的地を緯度経度に変換
   }
   else if( document.form1.goal.value.match(/^[0-9\., ]+$/) ){ //目的地に緯度・経度が入力されている
     var p = document.form1.goal.value.split(",");
+    goal = p[0] + "-" + p[1];
     goal_latlng = new google.maps.LatLng(p[0], p[1]);
     //alert(goal_latlng);
     makeroute2();

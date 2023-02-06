@@ -75,7 +75,7 @@
         目的地点&nbsp;:
         <input type="text" name="goal" size="40">
         <input type="button" value="ルート検索" onclick="makeroute()"><br>
-        (例 1：松山駅、例 2：33.849231, 132.769846)<br>
+        (例 1：松山駅, 例 2：33.84041, 132.75167)<br>
       </form>
       <br>
 
